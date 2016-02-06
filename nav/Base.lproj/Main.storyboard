@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="372"/>
+            <point key="canvasLocation" x="685" y="-336"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DJv-gS-g08">
@@ -40,7 +40,52 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHt-BW-5yX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10" y="-320"/>
+            <point key="canvasLocation" x="-170" y="-320"/>
+        </scene>
+        <!--Creation Success View Controller-->
+        <scene sceneID="IQE-Yw-EIq">
+            <objects>
+                <viewController storyboardIdentifier="creation_success" id="K8w-ix-mrb" customClass="CreationSuccessViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7yU-fU-1fl"/>
+                        <viewControllerLayoutGuide type="bottom" id="aU6-yM-AsC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aCl-83-eCW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yke-HA-x3j">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check25" translatesAutoresizingMaskIntoConstraints="NO" id="YF5-0j-a8d">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="290"/>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ikq-Bq-Tdv">
+                                        <rect key="frame" x="0.0" y="290" width="600" height="290"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yke-HA-x3j" firstAttribute="leading" secondItem="aCl-83-eCW" secondAttribute="leading" id="1pc-gg-xkL"/>
+                            <constraint firstItem="aU6-yM-AsC" firstAttribute="top" secondItem="Yke-HA-x3j" secondAttribute="bottom" id="Tfo-kx-xgm"/>
+                            <constraint firstAttribute="trailing" secondItem="Yke-HA-x3j" secondAttribute="trailing" id="m8k-hl-Ra4"/>
+                            <constraint firstItem="Yke-HA-x3j" firstAttribute="top" secondItem="7yU-fU-1fl" secondAttribute="bottom" id="oLj-rb-mB4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oi4-xR-gAn"/>
+                    <connections>
+                        <outlet property="tableView" destination="ikq-Bq-Tdv" id="CcG-2K-akN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6D-2d-ddY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="608"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check25" width="512" height="512"/>
+    </resources>
 </document>

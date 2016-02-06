@@ -204,10 +204,12 @@ class CreationModule: Module {
       vc.flowDelegate = self
       return vc
     }
-    let vc = CreationSuccessViewController()
-    vc.payload = self.payload
-    vc.flowDelegate = self
-    return vc
+    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("creation_success") as? CreationSuccessViewController {
+      vc.payload = self.payload
+      vc.flowDelegate = self
+      return vc
+    }
+    return UIViewController()
   }
 
   class CreationFirstTimeViewController: ViewController {
@@ -259,30 +261,36 @@ class CreationModule: Module {
     }
   }
 
-  class CreationSuccessViewController: ViewController {
-    var payload: CreationPayload?
-    weak var flowDelegate: CreationSuccessDelegate?
-    override func setupTable() {
-      title = "Creation - Success"
-      dataSource.sections = [
-        Section(header: "Success", rows: [
-          Row(text: "Successfully Sent \(payload!.price!) to \(payload!.target!)")
-        ]),
-        Section(header: "Choose Action", rows: [
-          Row(text: "Restart Flow", selection: { [unowned self] in
-            self.flowDelegate?.restartFlow()
-            }),
-          Row(text: "Done", selection: { [unowned self] in
-            self.flowDelegate?.endFlow()
-          })
-          ]
-        )
-      ]
-    }
-  }
 
 
 }
+
+class CreationSuccessViewController: UIViewController {
+  @IBOutlet weak var tableView: UITableView!
+  var payload: CreationModule.CreationPayload?
+  weak var flowDelegate: CreationSuccessDelegate?
+  var dataSource = DataSource()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    title = "Creation - Success"
+    dataSource.sections = [
+      Section(header: "Success", rows: [
+        Row(text: "Successfully Sent \(payload!.price!) to \(payload!.target!)")
+        ]),
+      Section(header: "Choose Action", rows: [
+        Row(text: "Restart Flow", selection: { [unowned self] in
+          self.flowDelegate?.restartFlow()
+          }),
+        Row(text: "Done", selection: { [unowned self] in
+          self.flowDelegate?.endFlow()
+          })
+        ]
+      )
+    ]
+    dataSource.tableView = self.tableView
+  }
+}
+
 
 extension CreationModule: CreationFirstTimeDelegate {
   func clickedOK() {
