@@ -78,6 +78,7 @@ class CreationFirstTimeViewController: ViewController {
     title = "Creation - Intro"
     dataSource.sections = [
       Section(header: "Welcome", rows: [
+        Row(text: "You'll see this view only once"),
         Row(text: "OK", selection: { [unowned self] in
           self.flowDelegate?.clickedOK()
           })

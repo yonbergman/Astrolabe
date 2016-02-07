@@ -1,11 +1,3 @@
-//
-//  Module.swift
-//  nav
-//
-//  Created by Bergman, Yon on 2/5/16.
-//  Copyright © 2016 yonbergman. All rights reserved.
-//
-
 import UIKit
 import Static
 

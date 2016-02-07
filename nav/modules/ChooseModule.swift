@@ -3,6 +3,7 @@ import Static
 
 typealias Color = (String, UIColor)
 typealias ColorCallback = ((Color) -> Void)
+
 class ChooseModule: Module {
 
   private static let colors = [("Default", UIColor.clearColor()), ("Red", UIColor.redColor()), ("Green", UIColor.greenColor()), ("Blue", UIColor.blueColor())]

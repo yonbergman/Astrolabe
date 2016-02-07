@@ -16,7 +16,7 @@ class ActivityModule: Module {
 
   func showActivity(animated: Bool = true) {
     let activityVC = self.activityVC ?? ActivityViewController()
-    showViewController(activityVC)
+    showViewController(activityVC, animated: animated)
     self.activityVC = activityVC
   }
 

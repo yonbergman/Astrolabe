@@ -105,7 +105,7 @@
 				B0C551551C6751BB008F6D28 /* CreationModule.swift */,
 				B0C5515A1C675321008F6D28 /* ChooseModule.swift */,
 			);
-			name = modules;
+			path = modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

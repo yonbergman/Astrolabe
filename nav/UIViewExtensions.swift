@@ -1,15 +1,8 @@
-//
-//  UIViewExtensions.swift
-//  nav
-//
-//  Created by Bergman, Yon on 2/6/16.
-//  Copyright © 2016 yonbergman. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
 extension UIView {
+
   func pinViewToEdges(subview: UIView) {
     self.addSubview(subview)
     subview.translatesAutoresizingMaskIntoConstraints = false
