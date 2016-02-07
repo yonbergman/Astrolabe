@@ -23,13 +23,14 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     setupTable()
     dataSource.tableView = tableView
+    print("+ Alloc\t\(title!)")
   }
 
   func setupTable() {
-
   }
+
   deinit {
-    print("Dealloc \(title)")
+    print("- Dealloc\t\(title!)")
   }
 }
 

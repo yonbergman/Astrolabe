@@ -16,6 +16,10 @@
 		B005B26F1C64FBDF00F4925E /* Static.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B005B26E1C64FBDF00F4925E /* Static.framework */; };
 		B005B2721C64FD7A00F4925E /* Static.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B005B26E1C64FBDF00F4925E /* Static.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B005B28F1C65F6BD00F4925E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005B28E1C65F6BD00F4925E /* UIViewExtensions.swift */; };
+		B0C551541C67518E008F6D28 /* ActivityModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551531C67518E008F6D28 /* ActivityModule.swift */; };
+		B0C551561C6751BB008F6D28 /* CreationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551551C6751BB008F6D28 /* CreationModule.swift */; };
+		B0C551581C6751D3008F6D28 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551571C6751D3008F6D28 /* HomeModule.swift */; };
+		B0C5515B1C675321008F6D28 /* ChooseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5515A1C675321008F6D28 /* ChooseModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +46,10 @@
 		B005B26C1C64FAED00F4925E /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		B005B26E1C64FBDF00F4925E /* Static.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Static.framework; path = Carthage/Build/iOS/Static.framework; sourceTree = "<group>"; };
 		B005B28E1C65F6BD00F4925E /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		B0C551531C67518E008F6D28 /* ActivityModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModule.swift; sourceTree = "<group>"; };
+		B0C551551C6751BB008F6D28 /* CreationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationModule.swift; sourceTree = "<group>"; };
+		B0C551571C6751D3008F6D28 /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
+		B0C5515A1C675321008F6D28 /* ChooseModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,16 +84,28 @@
 		B005B2591C64FA9800F4925E /* nav */ = {
 			isa = PBXGroup;
 			children = (
+				B0C5515C1C6759FA008F6D28 /* modules */,
 				B005B25A1C64FA9800F4925E /* AppDelegate.swift */,
+				B005B26C1C64FAED00F4925E /* Module.swift */,
 				B005B25C1C64FA9800F4925E /* ViewController.swift */,
+				B005B28E1C65F6BD00F4925E /* UIViewExtensions.swift */,
 				B005B25E1C64FA9800F4925E /* Main.storyboard */,
-				B005B2611C64FA9800F4925E /* Assets.xcassets */,
 				B005B2631C64FA9800F4925E /* LaunchScreen.storyboard */,
 				B005B2661C64FA9800F4925E /* Info.plist */,
-				B005B26C1C64FAED00F4925E /* Module.swift */,
-				B005B28E1C65F6BD00F4925E /* UIViewExtensions.swift */,
+				B005B2611C64FA9800F4925E /* Assets.xcassets */,
 			);
 			path = nav;
+			sourceTree = "<group>";
+		};
+		B0C5515C1C6759FA008F6D28 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				B0C551571C6751D3008F6D28 /* HomeModule.swift */,
+				B0C551531C67518E008F6D28 /* ActivityModule.swift */,
+				B0C551551C6751BB008F6D28 /* CreationModule.swift */,
+				B0C5515A1C675321008F6D28 /* ChooseModule.swift */,
+			);
+			name = modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,10 +198,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C551561C6751BB008F6D28 /* CreationModule.swift in Sources */,
 				B005B25D1C64FA9800F4925E /* ViewController.swift in Sources */,
+				B0C551581C6751D3008F6D28 /* HomeModule.swift in Sources */,
 				B005B25B1C64FA9800F4925E /* AppDelegate.swift in Sources */,
+				B0C5515B1C675321008F6D28 /* ChooseModule.swift in Sources */,
 				B005B28F1C65F6BD00F4925E /* UIViewExtensions.swift in Sources */,
 				B005B26D1C64FAED00F4925E /* Module.swift in Sources */,
+				B0C551541C67518E008F6D28 /* ActivityModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +363,7 @@
 				B005B26B1C64FA9800F4925E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
