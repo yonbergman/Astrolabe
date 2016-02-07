@@ -26,6 +26,26 @@ class ActivityModule: Module {
     navigationController.pushViewController(activityDetailsVC, animated: animated)
   }
 
+  override func setupRouting() {
+
+    Router.sharedInstance.registerRouting { path, params in
+      let id = Router.findID(params)
+      switch path {
+      case "activity" where id != nil:
+        if let id = id where id < ActivityModule.MyActivities.count {
+          self.showActivityDetails(ActivityModule.MyActivities[id])
+          return true
+        }
+        return false
+      case "activity":
+        self.showActivity(true)
+        return true
+      default:
+        return false
+      }
+    }
+  }
+
 
   class ActivityViewController: ViewController {
     override func setupTable() {

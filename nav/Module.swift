@@ -20,6 +20,11 @@ class Module {
 
   init(navigationController: UINavigationController) {
     self.navigationController = navigationController
+    setupRouting()
+  }
+
+  func setupRouting() {
+
   }
 
   func backstackContainsVC(vc: UIViewController) -> Bool {

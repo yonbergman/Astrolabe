@@ -20,6 +20,7 @@
 		B0C551561C6751BB008F6D28 /* CreationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551551C6751BB008F6D28 /* CreationModule.swift */; };
 		B0C551581C6751D3008F6D28 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551571C6751D3008F6D28 /* HomeModule.swift */; };
 		B0C5515B1C675321008F6D28 /* ChooseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5515A1C675321008F6D28 /* ChooseModule.swift */; };
+		B0D970A01C67939300BAAE26 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9709F1C67939300BAAE26 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,7 @@
 		B0C551551C6751BB008F6D28 /* CreationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationModule.swift; sourceTree = "<group>"; };
 		B0C551571C6751D3008F6D28 /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		B0C5515A1C675321008F6D28 /* ChooseModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseModule.swift; sourceTree = "<group>"; };
+		B0D9709F1C67939300BAAE26 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				B0C5515C1C6759FA008F6D28 /* modules */,
 				B005B25A1C64FA9800F4925E /* AppDelegate.swift */,
 				B005B26C1C64FAED00F4925E /* Module.swift */,
+				B0D9709F1C67939300BAAE26 /* Router.swift */,
 				B005B25C1C64FA9800F4925E /* ViewController.swift */,
 				B005B28E1C65F6BD00F4925E /* UIViewExtensions.swift */,
 				B005B25E1C64FA9800F4925E /* Main.storyboard */,
@@ -202,6 +205,7 @@
 				B005B25D1C64FA9800F4925E /* ViewController.swift in Sources */,
 				B0C551581C6751D3008F6D28 /* HomeModule.swift in Sources */,
 				B005B25B1C64FA9800F4925E /* AppDelegate.swift in Sources */,
+				B0D970A01C67939300BAAE26 /* Router.swift in Sources */,
 				B0C5515B1C675321008F6D28 /* ChooseModule.swift in Sources */,
 				B005B28F1C65F6BD00F4925E /* UIViewExtensions.swift in Sources */,
 				B005B26D1C64FAED00F4925E /* Module.swift in Sources */,

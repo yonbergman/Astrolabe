@@ -16,5 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
 
+  func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+    return Router.sharedInstance.route(url)
+  }
 }
 
