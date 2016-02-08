@@ -28,8 +28,17 @@ private class HomeViewController: ViewController {
         Row(text: "Creation Flow",selection: {
           Modules.creation.startCreationFlow()
         })
-        ])
+      ]),
+      Section(header: "DeepLink URLS", rows: [
+        Row(text: "Activity", detailText: "astrolabe://activity", cellClass: SubtitleCell.self, selection: {
+              UIApplication.sharedApplication().openURL(NSURL(string: "astrolabe://activity")!)
+          }),
+        Row(text: "Activity Item", detailText: "astrolabe://activity?id=1", cellClass: SubtitleCell.self, selection: {
+          UIApplication.sharedApplication().openURL(NSURL(string: "astrolabe://activity?id=1")!)
+        }),
+      ])
     ]
+
   }
 
   private func chooseColor() {

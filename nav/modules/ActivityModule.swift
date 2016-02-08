@@ -28,15 +28,19 @@ class ActivityModule: Module {
 
   override func setupRouting() {
 
+    func getActivityItem(params: [NSURLQueryItem]) -> Activity? {
+      if let id = Router.findID(params) where id < ActivityModule.MyActivities.count {
+        return ActivityModule.MyActivities[id]
+      }
+      return nil
+    }
+
     Router.sharedInstance.registerRouting { path, params in
-      let id = Router.findID(params)
+      let activity = getActivityItem(params)
       switch path {
-      case "activity" where id != nil:
-        if let id = id where id < ActivityModule.MyActivities.count {
-          self.showActivityDetails(ActivityModule.MyActivities[id])
-          return true
-        }
-        return false
+      case "activity" where activity != nil:
+        self.showActivityDetails(activity!)
+        return true
       case "activity":
         self.showActivity(true)
         return true
