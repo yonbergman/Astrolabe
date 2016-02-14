@@ -37,7 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B005B2571C64FA9800F4925E /* nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B005B2571C64FA9800F4925E /* astrolabe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = astrolabe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B005B25A1C64FA9800F4925E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B005B25C1C64FA9800F4925E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B005B25F1C64FA9800F4925E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		B005B2581C64FA9800F4925E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B005B2571C64FA9800F4925E /* nav.app */,
+				B005B2571C64FA9800F4925E /* astrolabe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B005B2561C64FA9800F4925E /* nav */ = {
+		B005B2561C64FA9800F4925E /* astrolabe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B005B2691C64FA9800F4925E /* Build configuration list for PBXNativeTarget "nav" */;
+			buildConfigurationList = B005B2691C64FA9800F4925E /* Build configuration list for PBXNativeTarget "astrolabe" */;
 			buildPhases = (
 				B005B2531C64FA9800F4925E /* Sources */,
 				B005B2541C64FA9800F4925E /* Frameworks */,
@@ -128,9 +128,9 @@
 			);
 			dependencies = (
 			);
-			name = nav;
+			name = astrolabe;
 			productName = nav;
-			productReference = B005B2571C64FA9800F4925E /* nav.app */;
+			productReference = B005B2571C64FA9800F4925E /* astrolabe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -148,7 +148,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B005B2521C64FA9800F4925E /* Build configuration list for PBXProject "nav" */;
+			buildConfigurationList = B005B2521C64FA9800F4925E /* Build configuration list for PBXProject "astrolabe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -161,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B005B2561C64FA9800F4925E /* nav */,
+				B005B2561C64FA9800F4925E /* astrolabe */,
 			);
 		};
 /* End PBXProject section */
@@ -328,8 +328,8 @@
 				);
 				INFOPLIST_FILE = nav/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonbergman.nav;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonbergman.astrolabe;
+				PRODUCT_NAME = astrolabe;
 			};
 			name = Debug;
 		};
@@ -343,15 +343,15 @@
 				);
 				INFOPLIST_FILE = nav/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonbergman.nav;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonbergman.astrolabe;
+				PRODUCT_NAME = astrolabe;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B005B2521C64FA9800F4925E /* Build configuration list for PBXProject "nav" */ = {
+		B005B2521C64FA9800F4925E /* Build configuration list for PBXProject "astrolabe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B005B2671C64FA9800F4925E /* Debug */,
@@ -360,7 +360,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B005B2691C64FA9800F4925E /* Build configuration list for PBXNativeTarget "nav" */ = {
+		B005B2691C64FA9800F4925E /* Build configuration list for PBXNativeTarget "astrolabe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B005B26A1C64FA9800F4925E /* Debug */,
