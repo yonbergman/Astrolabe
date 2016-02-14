@@ -1,7 +1,8 @@
 import UIKit
 import Static
+import Astrolabe
 
-class CreationModule: Module {
+class CreationModule: FlowModule {
 
   struct CreationPayload {
     var price: String?
@@ -13,7 +14,7 @@ class CreationModule: Module {
   var returnTarget: UIViewController!
 
   func startCreationFlow(payload: CreationPayload? = CreationPayload()) {
-    returnTarget = navigationController.topViewController
+    perserveState()
     self.payload = payload
     showNextVC(true)
   }
@@ -64,7 +65,7 @@ protocol CreationSuccessDelegate: class {
 }
 
 
-class CreationFirstTimeViewController: ViewController {
+class CreationFirstTimeViewController: SimpleViewController {
 
   static func initialize(flowDelegate: CreationFirstTimeDelegate? = nil) -> CreationFirstTimeViewController {
     let vc = CreationFirstTimeViewController()
@@ -88,7 +89,7 @@ class CreationFirstTimeViewController: ViewController {
   }
 }
 
-class CreationTargetViewController: ViewController {
+class CreationTargetViewController: SimpleViewController {
   weak var flowDelegate: CreationTargetDelegate?
   override func setupTable() {
     title = "Creation - Step 1"
@@ -104,7 +105,7 @@ class CreationTargetViewController: ViewController {
   }
 }
 
-class CreationPriceViewController: ViewController {
+class CreationPriceViewController: SimpleViewController {
   weak var flowDelegate: CreationPriceDelegate?
   override func setupTable() {
     title = "Creation - Step 2"
@@ -174,12 +175,12 @@ extension CreationModule: CreationSuccessDelegate {
 
   func restartFlow() {
     payload = CreationPayload()
-    navigationController.popToViewController(returnTarget, animated: false)
-    navigationController.pushViewController(chooseNextVC(), animated: true)
+    returnToStateAnimated(false)
+    showViewController(chooseNextVC(), animated: true)
   }
 
   func endFlow() {
-    navigationController.popToViewController(returnTarget, animated: true)
+    returnToStateAnimated(true)
   }
   
 }

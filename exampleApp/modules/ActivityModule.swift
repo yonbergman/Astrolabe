@@ -1,7 +1,8 @@
 import UIKit
 import Static
+import Astrolabe
 
-class ActivityModule: Module {
+class ActivityModule: NavigationModule {
   weak var activityVC: ActivityViewController?
 
   struct Activity {
@@ -14,51 +15,51 @@ class ActivityModule: Module {
     Activity(name: "Activity #2", details: "Bob Ha'Banai")
   ]
 
+  func getActivityVC() -> ActivityViewController {
+    let vc = self.activityVC ?? ActivityViewController()
+    self.activityVC = vc
+    return vc
+  }
+
   func showActivity(animated: Bool = true) {
-    let activityVC = self.activityVC ?? ActivityViewController()
+    let activityVC = getActivityVC()
     showViewController(activityVC, animated: animated)
-    self.activityVC = activityVC
   }
 
   func showActivityDetails(activity: Activity, animated: Bool = true) {
+    let activityVC = getActivityVC()
     let activityDetailsVC = ActivityDetailsViewController()
     activityDetailsVC.activity = activity
-    navigationController.pushViewController(activityDetailsVC, animated: animated)
+    showViewControllers([activityVC, activityDetailsVC], animated: animated)
   }
 
-  override func setupRouting() {
-
-    func getActivityItem(params: [NSURLQueryItem]) -> Activity? {
-      if let id = Router.findID(params) where id < ActivityModule.MyActivities.count {
-        return ActivityModule.MyActivities[id]
+  override func registerRoutes(router: Router) {
+    router.registerRoute("activity") { params in
+      if let activity = ActivityModule.getActivityItem(params) {
+        self.showActivityDetails(activity)
+      } else {
+        self.showActivity()
       }
-      return nil
-    }
-
-    Router.sharedInstance.registerRouting { path, params in
-      let activity = getActivityItem(params)
-      switch path {
-      case "activity" where activity != nil:
-        self.showActivityDetails(activity!)
-        return true
-      case "activity":
-        self.showActivity(true)
-        return true
-      default:
-        return false
-      }
+      return true
     }
   }
 
 
-  class ActivityViewController: ViewController {
+  static func getActivityItem(params: [NSURLQueryItem]) -> Activity? {
+    if let idString = Router.getParameter("id", params: params), id = Int(idString) where id < ActivityModule.MyActivities.count {
+      return ActivityModule.MyActivities[id]
+    }
+    return nil
+  }
+
+  class ActivityViewController: SimpleViewController {
     override func setupTable() {
       title = "Activity"
       dataSource.sections = [
         Section(rows:
           ActivityModule.MyActivities.map { activity in
             Row(text: activity.name, detailText: activity.details, selection: {
-              Modules.activity.showActivityDetails(activity, animated: true)
+              Astrolabe.Modules.activity.showActivityDetails(activity, animated: true)
             })
           }
         )
@@ -66,7 +67,7 @@ class ActivityModule: Module {
     }
   }
 
-  class ActivityDetailsViewController: ViewController {
+  class ActivityDetailsViewController: SimpleViewController {
     var activity: Activity! {
       didSet {
         setupTable()
@@ -86,10 +87,10 @@ class ActivityModule: Module {
             rows:
             [
               Row(text:"Jump Home", selection: {
-                Modules.home.showHome(true)
+                Astrolabe.Modules.home.showHome(true)
               }),
               Row(text:"Start Creation Flow", selection: {
-                Modules.creation.startCreationFlow(CreationModule.CreationPayload(price: nil, target: activity.details))
+                Astrolabe.Modules.creation.startCreationFlow(CreationModule.CreationPayload(price: nil, target: activity.details))
               })
             ])
         ]
