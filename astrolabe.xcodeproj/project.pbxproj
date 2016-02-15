@@ -14,6 +14,9 @@
 		B005B26D1C64FAED00F4925E /* MyModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005B26C1C64FAED00F4925E /* MyModules.swift */; };
 		B005B26F1C64FBDF00F4925E /* Static.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B005B26E1C64FBDF00F4925E /* Static.framework */; };
 		B005B2721C64FD7A00F4925E /* Static.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B005B26E1C64FBDF00F4925E /* Static.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0208EF31C71C8E900E5E720 /* SegueModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0208EF21C71C8E900E5E720 /* SegueModule.storyboard */; };
+		B0208EF51C71CB6200E5E720 /* SegueModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0208EF41C71CB6200E5E720 /* SegueModule.swift */; };
+		B0208EF81C71E9D300E5E720 /* CheckpointNavigationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0208EF61C71E99600E5E720 /* CheckpointNavigationModule.swift */; };
 		B07185DA1C70C6DD00ED94A1 /* astrolabe.h in Headers */ = {isa = PBXBuildFile; fileRef = B07185D91C70C6DD00ED94A1 /* astrolabe.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B07185EC1C70C6DD00ED94A1 /* Astrolabe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B07185D71C70C6DD00ED94A1 /* Astrolabe.framework */; };
 		B07185ED1C70C6DD00ED94A1 /* Astrolabe.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B07185D71C70C6DD00ED94A1 /* Astrolabe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -21,7 +24,6 @@
 		B07185F71C70C89700ED94A1 /* Astrolabe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07185F61C70C89700ED94A1 /* Astrolabe.swift */; };
 		B07185F81C70CD4200ED94A1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D9709F1C67939300BAAE26 /* Router.swift */; };
 		B07185FA1C70D24100ED94A1 /* NavigationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07185F91C70D24100ED94A1 /* NavigationModule.swift */; };
-		B07185FC1C70D24B00ED94A1 /* FlowModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07185FB1C70D24B00ED94A1 /* FlowModule.swift */; };
 		B07185FE1C70E0A600ED94A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07185FD1C70E0A600ED94A1 /* LaunchScreen.storyboard */; };
 		B0C551541C67518E008F6D28 /* ActivityModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551531C67518E008F6D28 /* ActivityModule.swift */; };
 		B0C551561C6751BB008F6D28 /* CreationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551551C6751BB008F6D28 /* CreationModule.swift */; };
@@ -62,13 +64,15 @@
 		B005B2661C64FA9800F4925E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B005B26C1C64FAED00F4925E /* MyModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModules.swift; sourceTree = "<group>"; };
 		B005B26E1C64FBDF00F4925E /* Static.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Static.framework; path = Carthage/Build/iOS/Static.framework; sourceTree = "<group>"; };
+		B0208EF21C71C8E900E5E720 /* SegueModule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SegueModule.storyboard; sourceTree = "<group>"; };
+		B0208EF41C71CB6200E5E720 /* SegueModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueModule.swift; sourceTree = "<group>"; };
+		B0208EF61C71E99600E5E720 /* CheckpointNavigationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckpointNavigationModule.swift; sourceTree = "<group>"; };
 		B07185D71C70C6DD00ED94A1 /* Astrolabe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Astrolabe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07185D91C70C6DD00ED94A1 /* astrolabe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = astrolabe.h; sourceTree = "<group>"; };
 		B07185DB1C70C6DD00ED94A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B07185F41C70C71000ED94A1 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		B07185F61C70C89700ED94A1 /* Astrolabe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Astrolabe.swift; sourceTree = "<group>"; };
 		B07185F91C70D24100ED94A1 /* NavigationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationModule.swift; sourceTree = "<group>"; };
-		B07185FB1C70D24B00ED94A1 /* FlowModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowModule.swift; sourceTree = "<group>"; };
 		B07185FD1C70E0A600ED94A1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0C551531C67518E008F6D28 /* ActivityModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModule.swift; sourceTree = "<group>"; };
 		B0C551551C6751BB008F6D28 /* CreationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationModule.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				B005B25C1C64FA9800F4925E /* SimpleViewController.swift */,
 				B005B25E1C64FA9800F4925E /* Main.storyboard */,
 				B07185FD1C70E0A600ED94A1 /* LaunchScreen.storyboard */,
+				B0208EF21C71C8E900E5E720 /* SegueModule.storyboard */,
 				B005B2661C64FA9800F4925E /* Info.plist */,
 				B005B2611C64FA9800F4925E /* Assets.xcassets */,
 			);
@@ -138,7 +143,7 @@
 				B07185F61C70C89700ED94A1 /* Astrolabe.swift */,
 				B07185F41C70C71000ED94A1 /* Module.swift */,
 				B07185F91C70D24100ED94A1 /* NavigationModule.swift */,
-				B07185FB1C70D24B00ED94A1 /* FlowModule.swift */,
+				B0208EF61C71E99600E5E720 /* CheckpointNavigationModule.swift */,
 				B0D9709F1C67939300BAAE26 /* Router.swift */,
 				B07185DB1C70C6DD00ED94A1 /* Info.plist */,
 				B07185D91C70C6DD00ED94A1 /* astrolabe.h */,
@@ -153,6 +158,7 @@
 				B0C551531C67518E008F6D28 /* ActivityModule.swift */,
 				B0C551551C6751BB008F6D28 /* CreationModule.swift */,
 				B0C5515A1C675321008F6D28 /* SettingsModule.swift */,
+				B0208EF41C71CB6200E5E720 /* SegueModule.swift */,
 			);
 			path = modules;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			files = (
 				B005B2621C64FA9800F4925E /* Assets.xcassets in Resources */,
 				B005B2601C64FA9800F4925E /* Main.storyboard in Resources */,
+				B0208EF31C71C8E900E5E720 /* SegueModule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +298,7 @@
 				B0C551561C6751BB008F6D28 /* CreationModule.swift in Sources */,
 				B005B25D1C64FA9800F4925E /* SimpleViewController.swift in Sources */,
 				B0C551581C6751D3008F6D28 /* HomeModule.swift in Sources */,
+				B0208EF51C71CB6200E5E720 /* SegueModule.swift in Sources */,
 				B005B25B1C64FA9800F4925E /* AppDelegate.swift in Sources */,
 				B0C5515B1C675321008F6D28 /* SettingsModule.swift in Sources */,
 				B005B26D1C64FAED00F4925E /* MyModules.swift in Sources */,
@@ -302,7 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B07185FC1C70D24B00ED94A1 /* FlowModule.swift in Sources */,
+				B0208EF81C71E9D300E5E720 /* CheckpointNavigationModule.swift in Sources */,
 				B07185F51C70C71000ED94A1 /* Module.swift in Sources */,
 				B07185F81C70CD4200ED94A1 /* Router.swift in Sources */,
 				B07185F71C70C89700ED94A1 /* Astrolabe.swift in Sources */,
@@ -516,6 +524,7 @@
 				B07185F01C70C6DD00ED94A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

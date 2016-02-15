@@ -6,12 +6,11 @@ public var kHomeHasNavBar = true
 
 typealias SettingsCallback = ((Bool) -> Void)
 
-class SettingsModule: FlowModule {
+class SettingsModule: NavigationModule {
 
   private var callback: SettingsCallback?
 
   func showSettings(callback: SettingsCallback? = nil) {
-    perserveState()
 
     let vc = SettingsViewController()
     vc.parentModule = self
@@ -21,7 +20,7 @@ class SettingsModule: FlowModule {
 
   private func setHomeHasNavBar(homeHasNavBar: Bool) {
     callback?(homeHasNavBar)
-    returnToStateAnimated(true)
+    navigationController.popViewControllerAnimated(true)
   }
 }
 

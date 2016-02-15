@@ -42,6 +42,12 @@ class ActivityModule: NavigationModule {
       }
       return true
     }
+    router.registerRoute("activity/random") { params in
+      let randomIndex = Int(arc4random_uniform(UInt32(ActivityModule.MyActivities.count)))
+      self.showActivityDetails(ActivityModule.MyActivities[randomIndex])
+      return true
+    }
+
   }
 
 

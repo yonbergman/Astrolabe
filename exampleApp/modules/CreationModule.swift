@@ -2,7 +2,7 @@ import UIKit
 import Static
 import Astrolabe
 
-class CreationModule: FlowModule {
+class CreationModule: NavigationModule {
 
   struct CreationPayload {
     var price: String?
@@ -11,10 +11,10 @@ class CreationModule: FlowModule {
 
   var didSeeFirstTime = false
   var payload: CreationPayload!
-  var returnTarget: UIViewController!
+  var returnTarget: UIViewController?
 
   func startCreationFlow(payload: CreationPayload? = CreationPayload()) {
-    perserveState()
+    saveReturnViewController()
     self.payload = payload
     showNextVC(true)
   }
@@ -44,6 +44,20 @@ class CreationModule: FlowModule {
     }
     return UIViewController()
   }
+
+
+  private func saveReturnViewController() {
+    returnTarget = self.navigationController.topViewController
+  }
+
+  private func returnToSavedViewControllerAnimated(animated: Bool = false) {
+    if let target = returnTarget {
+      self.navigationController.popToViewController(target, animated: animated)
+    } else {
+      print("Astrolabe - missing target")
+    }
+  }
+
 }
 
 
@@ -175,12 +189,12 @@ extension CreationModule: CreationSuccessDelegate {
 
   func restartFlow() {
     payload = CreationPayload()
-    returnToStateAnimated(false)
+    returnToSavedViewControllerAnimated(false)
     showViewController(chooseNextVC(), animated: true)
   }
 
   func endFlow() {
-    returnToStateAnimated(true)
+    returnToSavedViewControllerAnimated(true)
   }
   
 }
