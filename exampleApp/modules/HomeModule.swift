@@ -24,13 +24,19 @@ private class HomeViewController: SimpleViewController {
         Row(text: "Creation Flow",selection: {
           Astrolabe.Modules.creation.startCreationFlow()
         }),
+        Row(text: "Segue Flow",selection: {
+          Astrolabe.Modules.segue.startFlow()
+        }),
         Row(text: "Settings", selection: showSettings),
       ]),
       Section(header: "Deeplink URLs", rows: [
-        Row(text: "Activity", detailText: "astrolabe://activity", cellClass: SubtitleCell.self, selection: {
+        Row(text: "Activity", detailText: "exampleApp://activity", cellClass: SubtitleCell.self, selection: {
           Astrolabe.router.navigate("activity")
           }),
-        Row(text: "Activity Item", detailText: "astrolabe://activity?id=1", cellClass: SubtitleCell.self, selection: {
+        Row(text: "Activity Item", detailText: "exampleApp://activity/random", cellClass: SubtitleCell.self, selection: {
+          Astrolabe.router.navigate("activity/random")
+        }),
+        Row(text: "Activity Item", detailText: "exampleApp://activity?id=1", cellClass: SubtitleCell.self, selection: {
           Astrolabe.router.navigate("activity?id=1")
         }),
       ])

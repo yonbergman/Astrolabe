@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="G3T-eN-E7O">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Segue Modal Page-->
+        <scene sceneID="l8w-WP-uqf">
+            <objects>
+                <viewController id="aIY-dT-Kht" customClass="SegueModalPage" customModule="AstrolabeExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SsJ-Ws-9cn"/>
+                        <viewControllerLayoutGuide type="bottom" id="KBO-86-KXb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MuA-Md-LYX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKf-xh-3EL">
+                                <rect key="frame" x="20" y="239" width="560" height="122"/>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Traditur, inquit, ab Epicuro ratio neglegendi doloris. Ergo hoc quidem apparet, nos ad agendum esse natos. Nec hoc ille non vidit, sed verborum magnificentia est et gloria delectatus. Et quod est munus, quod opus sapientiae? Non enim iam stirpis bonum quaeret, sed animalis. Duo Reges: constructio interrete. Quis istud possit, inquit, negare?</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibe-1k-mBf">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Help Page" id="9Uy-Qu-o0T">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="TxS-ce-d9g">
+                                            <connections>
+                                                <segue destination="120-wd-vjr" kind="unwind" unwindAction="unwindFromModalToPage1:" id="SmB-3E-Nv4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ibe-1k-mBf" firstAttribute="leading" secondItem="MuA-Md-LYX" secondAttribute="leading" id="J8Y-Pl-AEV"/>
+                            <constraint firstItem="Ibe-1k-mBf" firstAttribute="top" secondItem="SsJ-Ws-9cn" secondAttribute="bottom" id="M5S-Yp-biO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OKf-xh-3EL" secondAttribute="trailing" id="Soq-OP-n2Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Ibe-1k-mBf" secondAttribute="trailing" id="mRe-Mn-eOf"/>
+                            <constraint firstItem="OKf-xh-3EL" firstAttribute="leading" secondItem="MuA-Md-LYX" secondAttribute="leadingMargin" id="nDx-O6-1aM"/>
+                            <constraint firstItem="Ibe-1k-mBf" firstAttribute="top" secondItem="SsJ-Ws-9cn" secondAttribute="bottom" id="w0f-AJ-aWj"/>
+                            <constraint firstItem="OKf-xh-3EL" firstAttribute="centerY" secondItem="MuA-Md-LYX" secondAttribute="centerY" id="xDx-bt-pjf"/>
+                            <constraint firstItem="OKf-xh-3EL" firstAttribute="centerX" secondItem="MuA-Md-LYX" secondAttribute="centerX" id="xJf-Wn-aON"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="w0f-AJ-aWj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FrR-PO-iJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="120-wd-vjr" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="-306"/>
+        </scene>
+        <!--Segue Flow-->
+        <scene sceneID="7yg-rG-oeC">
+            <objects>
+                <viewController id="G3T-eN-E7O" customClass="SeguePage1" customModule="AstrolabeExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NfT-I8-Fcp"/>
+                        <viewControllerLayoutGuide type="bottom" id="eIj-Ny-zpF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9iJ-Lg-dGv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iFP-Ij-a85">
+                                <rect key="frame" x="281" y="323" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.62141519784927368" green="0.019947418943047523" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nk6-pB-mNN">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Next Step">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0R6-NQ-Z88" kind="show" id="xCd-Iz-IYP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iFP-Ij-a85" firstAttribute="top" secondItem="Nk6-pB-mNN" secondAttribute="bottom" constant="8" id="IaC-o0-ft8"/>
+                            <constraint firstItem="iFP-Ij-a85" firstAttribute="centerX" secondItem="Nk6-pB-mNN" secondAttribute="centerX" id="MeM-6k-rxy"/>
+                            <constraint firstItem="Nk6-pB-mNN" firstAttribute="centerY" secondItem="9iJ-Lg-dGv" secondAttribute="centerY" id="YRM-SO-I38"/>
+                            <constraint firstItem="Nk6-pB-mNN" firstAttribute="leading" secondItem="9iJ-Lg-dGv" secondAttribute="leadingMargin" id="okb-BM-b7J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nk6-pB-mNN" secondAttribute="trailing" id="s04-Cn-4yR"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Segue Flow" id="DX1-P4-9KK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="iEx-wP-3Dy">
+                            <connections>
+                                <segue destination="aIY-dT-Kht" kind="presentation" id="6JB-dV-P5d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZKH-Hx-duk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="389"/>
+        </scene>
+        <!--Segue Page2-->
+        <scene sceneID="UCW-iF-G4I">
+            <objects>
+                <viewController id="0R6-NQ-Z88" customClass="SeguePage2" customModule="AstrolabeExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d6N-kT-OTS"/>
+                        <viewControllerLayoutGuide type="bottom" id="RuJ-oL-YDk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3HZ-6e-prr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="0da-st-VZH">
+                                <rect key="frame" x="281" y="323" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.62141519784927368" green="0.019947418943047523" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqe-BZ-AiC">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Next Step">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="UDD-Qt-QOy" kind="show" id="TFX-P9-74M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0da-st-VZH" firstAttribute="top" secondItem="Kqe-BZ-AiC" secondAttribute="bottom" constant="8" id="FjN-BS-KtL"/>
+                            <constraint firstItem="0da-st-VZH" firstAttribute="centerX" secondItem="Kqe-BZ-AiC" secondAttribute="centerX" id="OtB-LV-2YJ"/>
+                            <constraint firstItem="Kqe-BZ-AiC" firstAttribute="leading" secondItem="3HZ-6e-prr" secondAttribute="leadingMargin" id="SeJ-Rc-sKf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kqe-BZ-AiC" secondAttribute="trailing" id="fAV-R3-O3G"/>
+                            <constraint firstItem="Kqe-BZ-AiC" firstAttribute="centerY" secondItem="3HZ-6e-prr" secondAttribute="centerY" id="qzN-Gb-BiH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="abh-IU-BSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707" y="399"/>
+        </scene>
+        <!--Segue Page3-->
+        <scene sceneID="iLN-N7-atQ">
+            <objects>
+                <viewController id="UDD-Qt-QOy" customClass="SeguePage3" customModule="AstrolabeExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pFh-3e-xwv"/>
+                        <viewControllerLayoutGuide type="bottom" id="NJq-U6-VmL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0A2-y5-svc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="oZr-B8-ufU">
+                                <rect key="frame" x="281" y="323" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.62141519784927368" green="0.019947418943047523" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-JO-RS8">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Last Step">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done" destination="UDD-Qt-QOy" eventType="touchUpInside" id="ydw-dD-oVc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oZr-B8-ufU" firstAttribute="centerX" secondItem="Fcn-JO-RS8" secondAttribute="centerX" id="4lQ-mp-tQf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fcn-JO-RS8" secondAttribute="trailing" id="57I-uP-EJP"/>
+                            <constraint firstItem="Fcn-JO-RS8" firstAttribute="centerY" secondItem="0A2-y5-svc" secondAttribute="centerY" id="Ifm-fg-Mtb"/>
+                            <constraint firstItem="oZr-B8-ufU" firstAttribute="top" secondItem="Fcn-JO-RS8" secondAttribute="bottom" constant="8" id="bpx-pX-2Q2"/>
+                            <constraint firstItem="Fcn-JO-RS8" firstAttribute="leading" secondItem="0A2-y5-svc" secondAttribute="leadingMargin" id="sUi-sy-1uh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lag-a4-QgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1369" y="399"/>
+        </scene>
+    </scenes>
+</document>

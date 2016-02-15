@@ -42,5 +42,4 @@ public class NavigationModule: Module {
     newList.append(vc)
     navigationController.setViewControllers(newList, animated: animated)
   }
-  
 }

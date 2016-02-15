@@ -4,6 +4,7 @@ public typealias RoutingParams = [NSURLQueryItem]
 public typealias RoutingMethod = (RoutingParams -> Bool)
 
 public class Router {
+  
   static var scheme: String! { return Astrolabe.scheme }
   private var routes = [String: RoutingMethod]()
   static var sharedInstance: Router = Router()
@@ -19,10 +20,9 @@ public class Router {
   }
 
   public func route(url: NSURL) -> Bool {
-    let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
     if url.scheme != Astrolabe.scheme { return false }
-    let path = url.host ?? url.path ?? ""
-    let query = urlComponents?.queryItems ?? []
+    let path = extractPath(url)
+    let query = extractQueryItems(url)
 
     if let routingMethod = routes[path] {
       return routingMethod(query)
@@ -32,6 +32,17 @@ public class Router {
 
   public static func getParameter(name: String, params: [NSURLQueryItem]) -> String? {
     return params.filter { $0.name == name }.first?.value
+  }
+
+  private func extractPath(url: NSURL) -> String {
+    let host = url.host ?? ""
+    let path = url.path ?? ""
+    return host + path
+  }
+
+  private func extractQueryItems(url: NSURL) -> [NSURLQueryItem] {
+    let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
+    return urlComponents?.queryItems ?? []
   }
 
 }

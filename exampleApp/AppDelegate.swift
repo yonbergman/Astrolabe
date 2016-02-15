@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
     navigationController = UINavigationController()
-    Astrolabe.scheme = "astrolabe"
+    Astrolabe.scheme = "exampleApp"
     Astrolabe.Modules.setup(navigationController!)
     Astrolabe.Modules.home.showHome()
     window?.rootViewController = navigationController
