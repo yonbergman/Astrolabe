@@ -18,26 +18,26 @@ private class HomeViewController: SimpleViewController {
     title = "Home"
     dataSource.sections = [
       Section(rows: [
-        Row(text: "Activity", selection: {
+        Row(text: "History", accessory: .DisclosureIndicator, selection: {
           Astrolabe.Modules.activity.showActivity()
         }),
-        Row(text: "Creation Flow",selection: {
-          Astrolabe.Modules.creation.startCreationFlow()
+        Row(text: "Send Message", accessory: .DisclosureIndicator, selection: {
+          Astrolabe.Modules.flow.startFlow()
         }),
-        Row(text: "Segue Flow",selection: {
+        Row(text: "How it Works", accessory: .DisclosureIndicator, selection: {
           Astrolabe.Modules.segue.startFlow()
         }),
-        Row(text: "Settings", selection: showSettings),
+        Row(text: "Settings", accessory: .DisclosureIndicator, selection: showSettings),
       ]),
       Section(header: "Deeplink URLs", rows: [
-        Row(text: "Activity", detailText: "exampleApp://activity", cellClass: SubtitleCell.self, selection: {
-          Astrolabe.router.navigate("activity")
+        Row(text: "History", detailText: "exampleApp://history", cellClass: SubtitleCell.self, selection: {
+          Astrolabe.router.navigate("history")
           }),
-        Row(text: "Activity Item", detailText: "exampleApp://activity/random", cellClass: SubtitleCell.self, selection: {
-          Astrolabe.router.navigate("activity/random")
+        Row(text: "Random Message History", detailText: "exampleApp://history/random", cellClass: SubtitleCell.self, selection: {
+          Astrolabe.router.navigate("history/random")
         }),
-        Row(text: "Activity Item", detailText: "exampleApp://activity?id=1", cellClass: SubtitleCell.self, selection: {
-          Astrolabe.router.navigate("activity?id=1")
+        Row(text: "Message 1 History", detailText: "exampleApp://history?id=1", cellClass: SubtitleCell.self, selection: {
+          Astrolabe.router.navigate("history?id=1")
         }),
       ])
     ]

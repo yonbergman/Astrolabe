@@ -2,18 +2,18 @@ import UIKit
 import Static
 import Astrolabe
 
-class CreationModule: NavigationModule {
+class FlowModule: NavigationModule {
 
-  struct CreationPayload {
-    var price: String?
+  struct FlowPayload {
     var target: String?
+    var message: String?
   }
 
   var didSeeFirstTime = false
-  var payload: CreationPayload!
+  var payload: FlowPayload!
   var returnTarget: UIViewController?
 
-  func startCreationFlow(payload: CreationPayload? = CreationPayload()) {
+  func startFlow(payload: FlowPayload? = FlowPayload()) {
     saveReturnViewController()
     self.payload = payload
     showNextVC(true)
@@ -25,19 +25,19 @@ class CreationModule: NavigationModule {
 
   private func chooseNextVC() -> UIViewController {
     if !didSeeFirstTime {
-      return CreationFirstTimeViewController.initialize(self)
+      return FlowIntroViewController.initialize(self)
     }
     if payload.target == nil {
-      let vc = CreationTargetViewController()
+      let vc = FlowTargetViewController()
       vc.flowDelegate = self
       return vc
     }
-    if payload.price == nil {
-      let vc = CreationPriceViewController()
+    if payload.message == nil {
+      let vc = FlowMessageViewController()
       vc.flowDelegate = self
       return vc
     }
-    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("creation_success") as? CreationSuccessViewController {
+    if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("flow_success") as? FlowSuccessViewController {
       vc.payload = self.payload
       vc.flowDelegate = self
       return vc
@@ -61,40 +61,40 @@ class CreationModule: NavigationModule {
 }
 
 
-protocol CreationFirstTimeDelegate: class {
+protocol FlowIntroDelegate: class {
   func clickedOK()
 }
 
-protocol CreationTargetDelegate: class {
+protocol FlowTargetDelegate: class {
   func selectedTarget(target: String)
 }
 
-protocol CreationPriceDelegate: class {
-  func selectedPrice(price: String)
+protocol FlowMessageDelegate: class {
+  func selectedMessage(message: String)
 }
 
-protocol CreationSuccessDelegate: class {
+protocol FlowSuccessDelegate: class {
   func restartFlow()
   func endFlow()
 }
 
 
-class CreationFirstTimeViewController: SimpleViewController {
+private class FlowIntroViewController: SimpleViewController {
 
-  static func initialize(flowDelegate: CreationFirstTimeDelegate? = nil) -> CreationFirstTimeViewController {
-    let vc = CreationFirstTimeViewController()
+  static func initialize(flowDelegate: FlowIntroDelegate? = nil) -> FlowIntroViewController {
+    let vc = FlowIntroViewController()
     vc.flowDelegate = flowDelegate
     return vc
   }
 
-  weak var flowDelegate: CreationFirstTimeDelegate?
+  weak var flowDelegate: FlowIntroDelegate?
 
   override func setupTable() {
-    title = "Creation - Intro"
+    title = "Send Message"
     dataSource.sections = [
       Section(header: "Welcome", rows: [
         Row(text: "You'll see this view only once"),
-        Row(text: "OK", selection: { [unowned self] in
+        Row(text: "OK", cellClass: ButtonCell.self,  selection: { [unowned self] in
           self.flowDelegate?.clickedOK()
           })
         ]
@@ -103,13 +103,13 @@ class CreationFirstTimeViewController: SimpleViewController {
   }
 }
 
-class CreationTargetViewController: SimpleViewController {
-  weak var flowDelegate: CreationTargetDelegate?
+private class FlowTargetViewController: SimpleViewController {
+  weak var flowDelegate: FlowTargetDelegate?
   override func setupTable() {
-    title = "Creation - Step 1"
+    title = "Send Message"
     dataSource.sections = [
       Section(header: "Choose Target", rows:
-        ["Crystal Watson", "Jenny Collins", "Terrance Byrd", "Kurt Harvey"].map { u in
+        ["Nicolaus Copernicus", "Tycho Brahe", "Galileo Galilei", "Isaac Newton"].map { u in
           Row(text: u, selection: { [unowned self] in
             self.flowDelegate?.selectedTarget(u!)
             })
@@ -119,15 +119,15 @@ class CreationTargetViewController: SimpleViewController {
   }
 }
 
-class CreationPriceViewController: SimpleViewController {
-  weak var flowDelegate: CreationPriceDelegate?
+private class FlowMessageViewController: SimpleViewController {
+  weak var flowDelegate: FlowMessageDelegate?
   override func setupTable() {
-    title = "Creation - Step 2"
+    title = "Send Message"
     dataSource.sections = [
-      Section(header: "Choose Price", rows:
-        ["$3.50", "$5.00", "$6.00", "$100.00"].map { u in
-          Row(text: u, selection: { [unowned self] in
-            self.flowDelegate?.selectedPrice(u!)
+      Section(header: "Choose Message", rows:
+        ["Hey, how are you?", "Reach for the stars!", "🚀🌕"].map { m in
+          Row(text: m, selection: { [unowned self] in
+            self.flowDelegate?.selectedMessage(m!)
             })
         }
       )
@@ -135,24 +135,24 @@ class CreationPriceViewController: SimpleViewController {
   }
 }
 
-class CreationSuccessViewController: UIViewController {
+class FlowSuccessViewController: UIViewController {
 
   @IBOutlet weak var tableView: UITableView!
-  var payload: CreationModule.CreationPayload?
-  weak var flowDelegate: CreationSuccessDelegate?
+  var payload: FlowModule.FlowPayload?
+  weak var flowDelegate: FlowSuccessDelegate?
   var dataSource = DataSource()
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Creation - Success"
+    title = "Send Message"
     dataSource.sections = [
       Section(header: "Success", rows: [
-        Row(text: "Successfully Sent \(payload!.price!) to \(payload!.target!)")
+        Row(text: "Successfully Sent \"\(payload!.message!)\" to \(payload!.target!)")
         ]),
       Section(header: "Choose Action", rows: [
-        Row(text: "Restart Flow", selection: { [unowned self] in
+        Row(text: "Restart Flow", cellClass: ButtonCell.self, selection: { [unowned self] in
           self.flowDelegate?.restartFlow()
           }),
-        Row(text: "Done", selection: { [unowned self] in
+        Row(text: "Done", cellClass: ButtonCell.self, selection: { [unowned self] in
           self.flowDelegate?.endFlow()
           })
         ]
@@ -164,31 +164,31 @@ class CreationSuccessViewController: UIViewController {
 }
 
 
-extension CreationModule: CreationFirstTimeDelegate {
+extension FlowModule: FlowIntroDelegate {
   func clickedOK() {
     didSeeFirstTime = true
     replaceTopVC(chooseNextVC(), animated: true)
   }
 }
 
-extension CreationModule: CreationTargetDelegate {
+extension FlowModule: FlowTargetDelegate {
   func selectedTarget(target: String) {
     payload.target = target
     showNextVC(true)
   }
 }
 
-extension CreationModule: CreationPriceDelegate {
-  func selectedPrice(price: String) {
-    payload.price = price
+extension FlowModule: FlowMessageDelegate {
+  func selectedMessage(message: String) {
+    payload.message = message
     showNextVC(true)
   }
 }
 
-extension CreationModule: CreationSuccessDelegate {
+extension FlowModule: FlowSuccessDelegate {
 
   func restartFlow() {
-    payload = CreationPayload()
+    payload = FlowPayload()
     returnToSavedViewControllerAnimated(false)
     showViewController(chooseNextVC(), animated: true)
   }

@@ -26,7 +26,7 @@
 		B07185FA1C70D24100ED94A1 /* NavigationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07185F91C70D24100ED94A1 /* NavigationModule.swift */; };
 		B07185FE1C70E0A600ED94A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B07185FD1C70E0A600ED94A1 /* LaunchScreen.storyboard */; };
 		B0C551541C67518E008F6D28 /* ActivityModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551531C67518E008F6D28 /* ActivityModule.swift */; };
-		B0C551561C6751BB008F6D28 /* CreationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551551C6751BB008F6D28 /* CreationModule.swift */; };
+		B0C551561C6751BB008F6D28 /* FlowModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551551C6751BB008F6D28 /* FlowModule.swift */; };
 		B0C551581C6751D3008F6D28 /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C551571C6751D3008F6D28 /* HomeModule.swift */; };
 		B0C5515B1C675321008F6D28 /* SettingsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5515A1C675321008F6D28 /* SettingsModule.swift */; };
 /* End PBXBuildFile section */
@@ -75,7 +75,7 @@
 		B07185F91C70D24100ED94A1 /* NavigationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationModule.swift; sourceTree = "<group>"; };
 		B07185FD1C70E0A600ED94A1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0C551531C67518E008F6D28 /* ActivityModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModule.swift; sourceTree = "<group>"; };
-		B0C551551C6751BB008F6D28 /* CreationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationModule.swift; sourceTree = "<group>"; };
+		B0C551551C6751BB008F6D28 /* FlowModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowModule.swift; sourceTree = "<group>"; };
 		B0C551571C6751D3008F6D28 /* HomeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModule.swift; sourceTree = "<group>"; };
 		B0C5515A1C675321008F6D28 /* SettingsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModule.swift; sourceTree = "<group>"; };
 		B0D9709F1C67939300BAAE26 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			children = (
 				B0C551571C6751D3008F6D28 /* HomeModule.swift */,
 				B0C551531C67518E008F6D28 /* ActivityModule.swift */,
-				B0C551551C6751BB008F6D28 /* CreationModule.swift */,
+				B0C551551C6751BB008F6D28 /* FlowModule.swift */,
 				B0C5515A1C675321008F6D28 /* SettingsModule.swift */,
 				B0208EF41C71CB6200E5E720 /* SegueModule.swift */,
 			);
@@ -295,7 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0C551561C6751BB008F6D28 /* CreationModule.swift in Sources */,
+				B0C551561C6751BB008F6D28 /* FlowModule.swift in Sources */,
 				B005B25D1C64FA9800F4925E /* SimpleViewController.swift in Sources */,
 				B0C551581C6751D3008F6D28 /* HomeModule.swift in Sources */,
 				B0208EF51C71CB6200E5E720 /* SegueModule.swift in Sources */,

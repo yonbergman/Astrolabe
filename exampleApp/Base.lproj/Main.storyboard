@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Creation Success View Controller-->
+        <!--Flow Success View Controller-->
         <scene sceneID="IQE-Yw-EIq">
             <objects>
-                <viewController storyboardIdentifier="creation_success" id="K8w-ix-mrb" customClass="CreationSuccessViewController" customModule="AstrolabeExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="flow_success" id="K8w-ix-mrb" customClass="FlowSuccessViewController" customModule="AstrolabeExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7yU-fU-1fl"/>
                         <viewControllerLayoutGuide type="bottom" id="aU6-yM-AsC"/>
@@ -40,7 +40,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oi4-xR-gAn"/>
                     <connections>
-                        <outlet property="tableView" destination="ikq-Bq-Tdv" id="CcG-2K-akN"/>
+                        <outlet property="tableView" destination="ikq-Bq-Tdv" id="QRo-y1-o0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6D-2d-ddY" sceneMemberID="firstResponder"/>

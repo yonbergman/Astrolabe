@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="28" y="-306"/>
         </scene>
-        <!--Segue Flow-->
+        <!--How it Works-->
         <scene sceneID="7yg-rG-oeC">
             <objects>
                 <viewController id="G3T-eN-E7O" customClass="SeguePage1" customModule="AstrolabeExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,18 +89,28 @@
                                     <segue destination="0R6-NQ-Z88" kind="show" id="xCd-Iz-IYP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This app shows the different type of modules you can build with Astrolabe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FG2-Rp-ZOw">
+                                <rect key="frame" x="20" y="232" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Nk6-pB-mNN" firstAttribute="top" secondItem="FG2-Rp-ZOw" secondAttribute="bottom" constant="32" id="4Qk-hz-4Jp"/>
                             <constraint firstItem="iFP-Ij-a85" firstAttribute="top" secondItem="Nk6-pB-mNN" secondAttribute="bottom" constant="8" id="IaC-o0-ft8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FG2-Rp-ZOw" secondAttribute="trailing" id="MFa-Zw-6at"/>
                             <constraint firstItem="iFP-Ij-a85" firstAttribute="centerX" secondItem="Nk6-pB-mNN" secondAttribute="centerX" id="MeM-6k-rxy"/>
+                            <constraint firstItem="FG2-Rp-ZOw" firstAttribute="centerX" secondItem="9iJ-Lg-dGv" secondAttribute="centerX" id="QDu-pf-2OJ"/>
                             <constraint firstItem="Nk6-pB-mNN" firstAttribute="centerY" secondItem="9iJ-Lg-dGv" secondAttribute="centerY" id="YRM-SO-I38"/>
+                            <constraint firstItem="FG2-Rp-ZOw" firstAttribute="leading" secondItem="9iJ-Lg-dGv" secondAttribute="leadingMargin" id="nCf-ob-ZNL"/>
                             <constraint firstItem="Nk6-pB-mNN" firstAttribute="leading" secondItem="9iJ-Lg-dGv" secondAttribute="leadingMargin" id="okb-BM-b7J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nk6-pB-mNN" secondAttribute="trailing" id="s04-Cn-4yR"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Segue Flow" id="DX1-P4-9KK">
+                    <navigationItem key="navigationItem" title="How it Works" id="DX1-P4-9KK">
                         <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="iEx-wP-3Dy">
                             <connections>
                                 <segue destination="aIY-dT-Kht" kind="presentation" id="6JB-dV-P5d"/>

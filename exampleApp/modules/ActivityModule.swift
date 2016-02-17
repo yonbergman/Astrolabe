@@ -6,13 +6,13 @@ class ActivityModule: NavigationModule {
   weak var activityVC: ActivityViewController?
 
   struct Activity {
-    let name: String
-    let details: String
+    let message: String
+    let from: String
   }
 
   static let MyActivities = [
-    Activity(name: "Activity #1", details: "Moshe Ufnik"),
-    Activity(name: "Activity #2", details: "Bob Ha'Banai")
+    Activity(message: "What's up?", from: "Neil deGrasse Tyson"),
+    Activity(message: "I think that should be ok", from: "Carl Sagan")
   ]
 
   func getActivityVC() -> ActivityViewController {
@@ -34,7 +34,7 @@ class ActivityModule: NavigationModule {
   }
 
   override func registerRoutes(router: Router) {
-    router.registerRoute("activity") { params in
+    router.registerRoute("history") { params in
       if let activity = ActivityModule.getActivityItem(params) {
         self.showActivityDetails(activity)
       } else {
@@ -42,7 +42,7 @@ class ActivityModule: NavigationModule {
       }
       return true
     }
-    router.registerRoute("activity/random") { params in
+    router.registerRoute("history/random") { params in
       let randomIndex = Int(arc4random_uniform(UInt32(ActivityModule.MyActivities.count)))
       self.showActivityDetails(ActivityModule.MyActivities[randomIndex])
       return true
@@ -60,11 +60,11 @@ class ActivityModule: NavigationModule {
 
   class ActivityViewController: SimpleViewController {
     override func setupTable() {
-      title = "Activity"
+      title = "History"
       dataSource.sections = [
         Section(rows:
           ActivityModule.MyActivities.map { activity in
-            Row(text: activity.name, detailText: activity.details, selection: {
+            Row(text: activity.message, detailText: activity.from, cellClass: SubtitleCell.self, selection: {
               Astrolabe.Modules.activity.showActivityDetails(activity, animated: true)
             })
           }
@@ -80,23 +80,23 @@ class ActivityModule: NavigationModule {
       }
     }
     override func setupTable() {
-      title = "Activity Details"
+      title = "Message History"
       if let activity = activity {
         dataSource.sections = [
           Section(rows:
             [
-              Row(text: "Name", detailText: activity.name),
-              Row(text: "Details", detailText: activity.details),
+              Row(text: "From", detailText: activity.from),
+              Row(text: "Message", detailText: activity.message),
             ]
           ),
           Section(header: "Quick Actions",
             rows:
             [
-              Row(text:"Jump Home", selection: {
+              Row(text:"Jump Home", cellClass: ButtonCell.self, selection: {
                 Astrolabe.Modules.home.showHome(true)
               }),
-              Row(text:"Start Creation Flow", selection: {
-                Astrolabe.Modules.creation.startCreationFlow(CreationModule.CreationPayload(price: nil, target: activity.details))
+              Row(text:"Start Creation Flow", cellClass: ButtonCell.self, selection: {
+                Astrolabe.Modules.flow.startFlow(FlowModule.FlowPayload(target: activity.from, message: nil))
               })
             ])
         ]
