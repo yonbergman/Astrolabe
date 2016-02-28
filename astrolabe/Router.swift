@@ -4,7 +4,8 @@ public typealias RoutingParams = [NSURLQueryItem]
 public typealias RoutingMethod = (RoutingParams -> Bool)
 
 public class Router {
-  
+
+  public var preroutingMethod: (() -> ())?
   static var scheme: String! { return Astrolabe.scheme }
   private var routes = [String: RoutingMethod]()
   static var sharedInstance: Router = Router()
@@ -20,10 +21,11 @@ public class Router {
   }
 
   public func route(url: NSURL) -> Bool {
-    if url.scheme != Astrolabe.scheme { return false }
+    if url.scheme.caseInsensitiveCompare(Astrolabe.scheme) != NSComparisonResult.OrderedSame { return false }
     let path = extractPath(url)
     let query = extractQueryItems(url)
 
+    preroutingMethod?()
     if let routingMethod = routes[path] {
       return routingMethod(query)
     }

@@ -11,7 +11,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.mainScreen().bounds)
     navigationController = UINavigationController()
     Astrolabe.scheme = "exampleApp"
-    Astrolabe.Modules.setup(navigationController!)
+    Astrolabe.navigationController = navigationController
+    Astrolabe.router.preroutingMethod = {
+      Astrolabe.Modules.home.showHome(false)
+    }
+    Astrolabe.Modules.setup()
     Astrolabe.Modules.home.showHome()
     window?.rootViewController = navigationController
     window?.makeKeyAndVisible()

@@ -4,6 +4,15 @@ public class NavigationModule: Module {
   
   public let navigationController: UINavigationController
 
+  public convenience init?() {
+    if let navController = Astrolabe.navigationController {
+      self.init(navigationController: navController)
+    } else {
+      assertionFailure("Astrolabe.navigationController not set")
+      return nil
+    }
+  }
+
   public init(navigationController: UINavigationController) {
     self.navigationController = navigationController
     super.init()

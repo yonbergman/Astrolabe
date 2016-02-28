@@ -9,12 +9,12 @@ extension Astrolabe.Modules {
   static var settings: SettingsModule!
   static var segue: SegueModule!
 
-  static func setup(navigationController: UINavigationController) {
-    Astrolabe.Modules.home = HomeModule(navigationController: navigationController)
-    Astrolabe.Modules.activity = ActivityModule(navigationController: navigationController)
-    Astrolabe.Modules.flow = FlowModule(navigationController: navigationController)
-    Astrolabe.Modules.settings = SettingsModule(navigationController: navigationController)
-    Astrolabe.Modules.segue = SegueModule(navigationController: navigationController)
+  static func setup() {
+    Astrolabe.Modules.home = HomeModule()
+    Astrolabe.Modules.activity = ActivityModule()
+    Astrolabe.Modules.flow = FlowModule()
+    Astrolabe.Modules.settings = SettingsModule()
+    Astrolabe.Modules.segue = SegueModule()
   }
 
 }
